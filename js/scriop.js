@@ -2,6 +2,7 @@ let img = document.querySelector('#img');
 let title = document.querySelector('#title');
 let text = document.querySelector('#text');
 let link = document.querySelector('#link');
+let imgLink = document.querySelector('#img-link');
 let github = document.querySelector('#github');
 
 let prev = document.querySelector('#prev');
@@ -13,8 +14,9 @@ const carousel = [
         img: './img/kalk.png',
         title: 'Calculator',
         text: `Calculator bu saytni JavaScript tilida ko'proq amaliyot qislish uchun tayyorlaganman. unda xar hil matematik amallarni bajarish mumkun va saytning tepa qishmidagi tugmachalar orqali saytni "Dark mode" va "Light mode" tizimiga o'tkazish mumkun.`,
-        github:'https://github.com/DilshodXD/Calculator',
+        github: 'https://github.com/DilshodXD/Calculator',
         link: 'https://calculator-xd.netlify.app/',
+        imgLink: 'https://calculator-xd.netlify.app/',
     },
     {
         img: './img/britlex.png',
@@ -23,6 +25,7 @@ const carousel = [
         Bu sayt Mobile: 575px, 320px hajimdagi ekranlarga moslashtirib tuzilgan.`,
         github: 'https://github.com/DilshodXD/Britlex',
         link: 'https://britlex-xd.netlify.app/',
+        imgLink: 'https://britlex-xd.netlify.app/',
     },
     {
         img: './img/medi.png',
@@ -31,6 +34,7 @@ const carousel = [
                 Bu sayt PC: 1920px Laptop: 1440px, 1024px Table: 768px Mobile: 425px, 375px va 320px hajimdagi ekranlarga moslashtirib tuzilgan.`,
         github: 'https://github.com/DilshodXD/Medi',
         link: 'https://medi-xd.netlify.app/',
+        imgLink: 'https://medi-xd.netlify.app/',
     },
     {
         img: './img/brightlights.png',
@@ -38,19 +42,20 @@ const carousel = [
         text: `Bright Lights bu saytni Sass yaniy "CSS Framework" ni o'zlashtirish uchun tayyorlaganman.`,
         github: 'https://github.com/DilshodXD/BrightLights',
         link: 'https://brightlights-xd.netlify.app/',
+        imgLink: 'https://brightlights-xd.netlify.app/',
     },
 ];
 
 
 let index = 0;
-let indexLength = carousel.length -1;
+let indexLength = carousel.length - 1;
 
 
 next.addEventListener('click', () => {
 
-    if (index == indexLength){
+    if (index == indexLength) {
         index = -1
-    }else if (index == -indexLength){
+    } else if (index == -indexLength) {
         index = -1
     }
     index++;
@@ -61,39 +66,42 @@ next.addEventListener('click', () => {
         title.innerText = carousel[index].title;
         text.innerText = carousel[index].text;
         link.href = carousel[index].link;
+        imgLink.href = carousel[index].imgLink;
         github.href = carousel[index].github;
-    }else if( index < 0){
+    } else if (index < 0) {
         img.src = carousel[index * (-1)].img;
         title.innerText = carousel[index * (-1)].title;
         text.innerText = carousel[index * (-1)].text;
         link.href = carousel[index * (-1)].link;
+        imgLink.href = carousel[index * (-1)].imgLink;
         github.href = carousel[index * (-1)].github;
     }
 });
 
 prev.addEventListener('click', () => {
 
-    if (index == indexLength){
+    if (index == indexLength) {
         index = 1
-    }else if (index == -indexLength){
+    } else if (index == -indexLength) {
         index = 1
     }
     index--;
 
     console.log(index);
-    if (index >= 0){
+    if (index >= 0) {
         img.src = carousel[index].img;
         title.innerText = carousel[index].title;
         text.innerText = carousel[index].text;
         link.href = carousel[index].link;
+        imgLink.href = carousel[index].imgLink;
         github.href = carousel[index].github;
     }
-    else if (index < 0){
-        img.src = carousel[index *(-1)].img;
-        title.innerText = carousel[index *(-1)].title;
-        text.innerText = carousel[index *(-1)].text;
-        link.href = carousel[index *(-1)].link;
-        github.href = carousel[index *(-1)].github;
+    else if (index < 0) {
+        img.src = carousel[index * (-1)].img;
+        title.innerText = carousel[index * (-1)].title;
+        text.innerText = carousel[index * (-1)].text;
+        link.href = carousel[index * (-1)].link;
+        imgLink.href = carousel[index * (-1)].imgLink;
+        github.href = carousel[index * (-1)].github;
     }
 });
-
