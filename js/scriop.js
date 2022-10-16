@@ -1,4 +1,4 @@
-let img = document.querySelector('#img');
+    let img = document.querySelector('#img');
 let title = document.querySelector('#title');
 let text = document.querySelector('#text');
 let link = document.querySelector('#link');
